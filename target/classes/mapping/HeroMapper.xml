@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="worm.mapper.HeroMapper">
+	<resultMap id="hero" type="worm.entity.Hero">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="passive" jdbcType="VARCHAR" property="passive" />
+        <result column="q" jdbcType="VARCHAR" property="q" />
+        <result column="w" jdbcType="VARCHAR" property="w" />
+        <result column="e" jdbcType="VARCHAR" property="e" />
+        <result column="r" jdbcType="VARCHAR" property="r" />
+    </resultMap>
+    <insert id="add" parameterType="worm.entity.Hero" >
+        insert into wormhero (name,passive,Q,W,E,R ) values (#{name},#{passive},#{Q},#{W,#{E},#{R})
+    </insert>
+</mapper>

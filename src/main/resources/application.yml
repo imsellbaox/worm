@@ -1,0 +1,20 @@
+spring:
+   datasource:
+      username: root
+      password: admin
+      url: jdbc:mysql://127.0.0.1:3306/how2java?characterEncoding=UTF-8
+      driver-class-name: com.mysql.jdbc.Driver
+
+   kafka:
+      bootstrap-servers: 192.168.50.41:9092
+      producer:
+         key-serializer: org.apache.kafka.common.serialization.StringSerializer
+         value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      consumer:
+         group-id: wormhero
+         enable-auto-commit: false
+   mybatis:
+      mapper-locations: classpath:mapping/*Mapper.xml
+      type-aliases-package: worm.entity
+logging:
+    config: classpath:log4j2.xml 
